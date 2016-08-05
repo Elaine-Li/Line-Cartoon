@@ -1,3 +1,7 @@
+var x1 = 130;
+var y1 = 270;
+var speed = 6;
+
 function setup() {
   createCanvas(640,480);
 }
@@ -37,7 +41,17 @@ function draw() {
   fill(249,199,199);
   ellipse(160,255,35,10);//lt blush
   ellipse(240,255,35,10);//rt blush
-  
-  
-  
+  stroke(5);
+  fill(255);
+  ellipse(x1,350,50,45);//lt hand
+  ellipse(y1,350,50,45);//rt hand
+  noFill();
+  if (x1 > 136 || x1 < 119){
+    speed = speed * -1;
+  }
+  x1 = x1 + speed;
+  if (y1 > 176 || y1 < 259 ){
+    speed = speed * -1;
+  }
+  y1 = y1 + speed;
 }
